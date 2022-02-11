@@ -23,15 +23,18 @@ const updateList = (obj)=>{
 }
 
 const deleteList = (delEle)=>{
+    let temp
     const isbn =delEle.previousElementSibling.innerHTML
     delEle.parentNode.remove()
     let array = [...JSON.parse(localStorage.getItem("bookList"))]
     array.forEach((element, i)=>{
-        if(array[i].isbn==isbn)
+        if(element.isbn==isbn){
+            temp = element.title
             array.splice(i, 1)
+        }
     })
     localStorage.setItem("bookList", JSON.stringify(array))
-    displayMsg("Book Removed", "#78d478")
+    displayMsg(`Book ${temp} Removed`, "#78d478")
 }
 
 const createTr = (title, author, isbn)=>{
@@ -61,6 +64,9 @@ button.addEventListener("click", ()=>{
     if(title.value && author.value && isbn.value){
         createTr(title.value, author.value, isbn.value)
         updateList({title:title.value, author: author.value, isbn: isbn.value})
+        title.value = ""
+        author.value = ""
+        isbn.value = ""
         displayMsg("Book Added", "#78d478")
     }else{
         displayMsg("Please Enter all the feilds", "#f51625")  
