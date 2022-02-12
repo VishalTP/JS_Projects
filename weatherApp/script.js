@@ -4,6 +4,7 @@ const search = document.querySelector(".search")
 const input = document.querySelector("input")
 const _main = document.querySelector("main")
 const weatherDetails = document.querySelector(".weather_details")
+const _alert = document.querySelector(".alert")
 
 const _place = document.querySelector(".place"),
       _currentTemp = document.querySelector(".currentTemp"),
@@ -63,6 +64,14 @@ const displayData = (parsedData)=>{
     }
 }
 
+const notification = (msg)=>{
+    _alert.innerHTML = `<p>${msg}</p>`
+    _alert.style.transform = "translateY(0)"
+    setTimeout(()=>{
+        _alert.style.transform = "translateY(-80px)"
+    }, 2000)
+}
+
 const fetchData = async (place, lat=0, long=0)=>{
     let api
     try{
@@ -74,7 +83,7 @@ const fetchData = async (place, lat=0, long=0)=>{
         const parsedData = await fetchedData.json()
         displayData(await parsedData)
     }catch(err){
-        alert("Oops! cant find the location")
+        notification("Oops! cant find the location")
     }
 }
 
@@ -82,7 +91,7 @@ search.addEventListener("click", ()=>{
     if(input.value)
         fetchData(input.value)
     else
-        alert("Enter you location")
+        notification("Enter you location")
     input.value = ""
 })
 
@@ -100,7 +109,7 @@ toggleUnits.addEventListener("click", ()=>{
 
 saveLocation.addEventListener("click", ()=>{
     localStorage.setItem("home", currentPlace)
-    alert(`${currentPlace} saved as tour home location`)
+    notification(`${currentPlace} saved as tour home location`)
 })
 
 home.addEventListener("click", ()=>{
@@ -112,7 +121,7 @@ home.addEventListener("click", ()=>{
             weatherDetails.style.opacity = 1
         }, 300)
     }else    
-        alert("Please set your home location first")
+        notification("Please set your home location first")
 })
 
 refresh.addEventListener("click", ()=>{
@@ -131,13 +140,17 @@ latLong.addEventListener("click", ()=>{
             navigator.geolocation.getCurrentPosition((position)=>{
                 lat = position.coords.latitude
                 long = position.coords.longitude
-                fetchData("", lat, long)
+                weatherDetails.style.opacity = 0
+                setTimeout(()=>{
+                    fetchData("", lat, long)
+                    weatherDetails.style.opacity = 1
+                }, 300)
             });
         } else { 
             throw(err)
           }
     } catch (error) {
-        alert("Not able to access your Geo-location")
+        notification("Not able to access your Geo-location")
     }
 })
 
@@ -146,5 +159,6 @@ const onLoad = ()=>{
     if(!currentPlace)
         currentPlace = "Kerala"
     fetchData(currentPlace)
+    // notification()
 }
 onLoad()

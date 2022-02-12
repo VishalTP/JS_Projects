@@ -36,6 +36,7 @@ main{
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     z-index: 1;
+    overflow: hidden;
 }
 
 .search_bar, .buttons{
@@ -173,4 +174,38 @@ i{
 
 .weather_details{
     transition: all .3s linear;
+}
+
+.alert{
+    position: absolute;
+    background-color: rgb(190, 202, 255);
+    height: 80px;
+    width: 100%;
+    border-radius: .3rem;
+    transform: translateY(-80px);
+    transition: .3s linear;
+    display: flex;
+    align-items: center;
+}
+.instructions{
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1c1d25;
+    padding: 1rem;
+}
+.instructions p{
+    text-align: left;
+}
+
+@media(max-width:560px){
+    body{
+        transform: scale(.8);
+    }
+}
+@media(max-width:460px){
+    body{
+        transform: scale(.6);
+    }
 }

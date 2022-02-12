@@ -16,6 +16,7 @@
 <body class="flex">
     <img class="frame" src="./frame.png" alt="">
     <main>
+        <div class="alert"></div>
         <section class="search_bar">
             <div class="wrap">
                 <div class="input flex">
@@ -45,8 +46,8 @@
         </section>
         <section class="buttons ">
             <button class="latLong"><i class="fas fa-map-marker-alt fa-2x"></i></button>
-            <button class="home"><i class="fas fa-home fa-2x"></i></button>
             <button class="saveLocation"><i class="fas fa-save fa-2x"></i></button>
+            <button class="home"><i class="fas fa-home fa-2x"></i></button>
             <button class="toggleUnits"><i class="fas fa-toggle-on fa-2x"></i></button>
             <button class="refresh"><i class="fas fa-redo-alt fa-2x"></i></button>
         </section>
@@ -83,5 +84,13 @@
             </div>
         </section>
     </main>
+    <div class="instructions">
+        <p>INSTRUCTIONS</p>
+        <p><i class="fas fa-map-marker-alt fa-2x"></i>  &rarr; Your current geo-location weather</p><br>
+        <p><i class="fas fa-save fa-2x"></i> &rarr; Sets current location as home location</p><br>
+        <p><i class="fas fa-home fa-2x"></i> &rarr; Your Home location weather</p><br>
+        <p><i class="fas fa-toggle-on fa-2x"></i> &rarr; Toggles between Celcius & Farenhiet</p><br>
+        <p><i class="fas fa-redo-alt fa-2x"></i> &rarr; Refreshes the current weather details</p>
+    </div>
 </body>
 </html>
