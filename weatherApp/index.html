@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Weather App</title>
+</head>
+<body class="flex">
+    <img class="frame" src="./frame.png" alt="">
+    <main>
+        <section class="search_bar">
+            <div class="wrap">
+                <div class="input flex">
+                    <input type="text">
+                </div>
+                <div class="search flex">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </section>
+        <section class="weather_details">
+            <p class="place"></p>
+            <div class="temp">
+                <div class="currentTemp flex"></div>
+                <div class="highLow">
+                    <div class="icon flex"></div>
+                    <p class="high"></p>
+                    <p class="low"></p>
+                </div>
+            </div>
+            <div class="condition">
+                <p class="situation"></p>
+                <p class="feelsLike"></p>
+                <p class="humidity"></p>
+                <p class="wind"></p>
+            </div>
+        </section>
+        <section class="buttons ">
+            <button class="latLong"><i class="fas fa-map-marker-alt fa-2x"></i></button>
+            <button class="home"><i class="fas fa-home fa-2x"></i></button>
+            <button class="saveLocation"><i class="fas fa-save fa-2x"></i></button>
+            <button class="toggleUnits"><i class="fas fa-toggle-on fa-2x"></i></button>
+            <button class="refresh"><i class="fas fa-redo-alt fa-2x"></i></button>
+        </section>
+        <section class="forecast">
+            <div class="mon">
+                <p>Mon</p>
+                <div><i class="fas fa-snowflake fa-2x"></i></div>
+                <p>33.2</p>
+                <p>28.6</p>
+            </div>
+            <div class="tue">
+                <p>Tue</p>
+                <div><i class="fas fa-snowflake fa-2x"></i></div>
+                <p>33.2</p>
+                <p>28.6</p>
+            </div>
+            <div class="wed">
+                <p>Wed</p>
+                <div><i class="fas fa-snowflake fa-2x"></i></div>
+                <p>33.2</p>
+                <p>28.6</p>
+            </div>
+            <div class="thu">
+                <p>Thu</p>
+                <div><i class="fas fa-snowflake fa-2x"></i></div>
+                <p>33.2</p>
+                <p>28.6</p>
+            </div>
+            <div class="fri">
+                <p>Fri</p>
+                <div><i class="fas fa-snowflake fa-2x"></i></div>
+                <p>33.2</p>
+                <p>28.6</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

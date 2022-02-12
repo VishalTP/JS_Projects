@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    background: url("./background.jpg");
+    background-position: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    position: absolute;
+    width: 500px;
+    height: 800px;
+    border: 1px solid black;
+    background: url("./clear.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0,0,0, .3);
+    background-blend-mode:overlay;
+    transition: all .5s linear;
+    top : 49.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.search_bar, .buttons{
+    width: 100%;
+    height: 10%;
+}
+
+.weather_details{
+    width: 100%;
+    height: 60%;
+}
+
+.forecast{
+    width: 100%;
+    height: 20%;  
+    display: flex;
+    justify-content: space-around;
+}
+.forecast div{
+    flex: 1;
+}
+.forecast div div{
+    text-align: center;
+    margin: .3rem 0;
+}
+
+.forecast div p:nth-child(1){
+    font-weight: bold;
+}
+
+p{
+    text-align: center;
+    margin: 3px auto;
+    font-size: 1.4rem;
+}
+
+
+.wrap{
+    width: 100%;
+    display: flex;
+    border: 2px solid white;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.search_bar{
+    display: flex;
+    padding: .8rem;
+}
+
+.input{
+    width: 80%;
+    height: 100%;
+}
+input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding-left: 1.2rem;
+    font-size: 1.3rem;
+    background: transparent;
+    color: white;
+}
+
+.search{
+    width: 20%;
+    height: 100%; 
+}
+
+.temp{
+    display: flex;
+    height: 45%;
+}
+.currentTemp{
+    width: 55%;
+    height: 100%;
+}
+.highLow{
+    width: 45%;
+    height: 100%;
+    align-self: center;
+    padding-bottom: 1rem;
+}
+.highLow, .condition{
+    height: 45%;
+}
+
+.place{
+    height: 10%;
+}
+.condition{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent ;
+}
+
+.currentTemp{
+    font-size: 5rem;
+}
+
+i{
+    color: white;
+}
+
+.icon{
+    margin-bottom: .6rem;
+}
+.situation, .feelsLike, .place{
+    font-weight: 600;
+}
+
+.frame{
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 549px;
+    height: 920px;
+    z-index: 0;
+}
+
+.weather_details{
+    transition: all .3s linear;
+}
