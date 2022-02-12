@@ -158,7 +158,7 @@ const onLoad = ()=>{
     currentPlace = localStorage.getItem("home")
     if(!currentPlace)
         currentPlace = "Kerala"
-    // fetchData(currentPlace)
+    fetchData(currentPlace)
     // notification()
 }
 onLoad()
