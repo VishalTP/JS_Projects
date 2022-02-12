@@ -30,7 +30,7 @@ main{
     background-size: cover;
     background-color: rgba(0,0,0, .3);
     background-blend-mode:overlay;
-    transition: all .5s linear;
+    transition: all 1s linear;
     top : 49.5%;
     left: 50%;
     transform: translate(-50%, -50%);
