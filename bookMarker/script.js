@@ -62,12 +62,18 @@ const updateList = (siteName, siteUrl)=>{
     createItem(siteName, siteUrl)
 }
 
+const _alert = (msg)=>{
+    setTimeout(()=>{
+        alert(msg)
+    },0)
+}
+
 const validate = (siteName, siteUrl)=>{
     if(siteName ==="" || siteUrl ===""){
-        alert("Please enter properly")
+        _alert("Please check the inputs again")
         return -1
     }else if(siteUrl.indexOf(".")==-1 || (siteUrl.length-siteUrl.lastIndexOf(".")-1)<2){
-        alert("Invalid URL")
+        _alert("Invalid URL")
         return -1
     }
     if(siteUrl.indexOf("http://")==-1)
@@ -79,7 +85,6 @@ const validate = (siteName, siteUrl)=>{
 submit.addEventListener("click", ()=>{
     let flag=1
     flag = validate(siteName.value, siteUrl.value)
-    // updateList(siteName.value, siteUrl.value)
     if(flag===1)
         saveWebsites(siteName.value, siteUrl.value)
     siteName.value = "" 
